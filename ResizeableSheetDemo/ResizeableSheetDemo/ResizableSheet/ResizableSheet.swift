@@ -91,12 +91,13 @@ public struct ResizableSheet: View, Identifiable {
                         )
                         .background(
                             config.sheetBackground(currentContext)
-                                .gesture(gesture)
+                                
                         )
                         .cornerRadius(config.cornerRadius, corners: [.topLeft, .topRight])
                         .offset(y: model.offset(state: state, in: proxy.size))
                         .animation(config.animation)
                         .transition(.move(edge: .bottom).animation(config.animation))
+                        .gesture(gesture)
                 }
             }
             .onAppear {
